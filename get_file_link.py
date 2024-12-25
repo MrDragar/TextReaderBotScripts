@@ -7,9 +7,12 @@ def handle(data):
 	BOT_TOKEN = data["BOT_TOKEN"]
 
 	file_id = data["file_id"]
+	proxy = {
+		"https": data["HTTPS_PROXY"]
+	}
 
 	get_file_url = f'https://api.telegram.org/bot{BOT_TOKEN}/getFile?file_id={file_id}'
-	response = requests.get(get_file_url).json()
+	response = requests.get(get_file_url, proxies=proxy).json()
 
 	if response['ok']:
 		file_path = response['result']['file_path']
