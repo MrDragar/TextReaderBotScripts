@@ -33,9 +33,6 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
           CHATGPT_API_KEY: ${{ secrets.CHATGPT_API_KEY }}
-
-          
-      run: echo "Using API key: $BOT_TOKEN"
     
     - name: Lint with flake8
       run: |
