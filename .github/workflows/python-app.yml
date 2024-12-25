@@ -14,8 +14,8 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    environment: Test 
     env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
