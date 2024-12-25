@@ -12,6 +12,11 @@ HTTPS_PROXY = os.getenv("HTTPS_PROXY")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 
+def test_local_env():
+    assert CHATGPT_API_KEY is not None
+    assert HTTPS_PROXY is not None
+    assert BOT_TOKEN is not None
+
 def test_chatgpt_text_from_image():
     test_data = {
         "CHATGPT_API_KEY": CHATGPT_API_KEY,
