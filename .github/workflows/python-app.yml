@@ -29,7 +29,7 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Create .env file
-      run: echo "BOT_TOKEN=${{ env.BOT_TOKEN }}\HTTPS_PROXY=${{ env.HTTPS_PROXY }}\CHATGPT_API_KEY=${{ env.CHATGPT_API_KEY }}\n" > .env 
+      run: echo "BOT_TOKEN=${{ vars.BOT_TOKEN }}\nHTTPS_PROXY=${{ vars.HTTPS_PROXY }}\nCHATGPT_API_KEY=${{ vars.CHATGPT_API_KEY }}\n" > .env 
       
     - name: Lint with flake8
       run: |
